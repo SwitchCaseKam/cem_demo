@@ -1,0 +1,13 @@
+.picture-element
+{
+    display: inline-block;
+    padding: 40px; 
+
+}
+
+.text-element
+{
+    padding: 40px;
+    font-family: "Calibri";
+    color: rgb(32, 42, 53);
+}
