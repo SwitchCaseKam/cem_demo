@@ -1,11 +1,8 @@
 <div class="grid-container">
 
-  <b>Informacje o zmarłych:</b><br>
-  <!-- {{ people }} -->
-  {{ getCurrentTomb() }}
   <div *ngIf='people'>
-      <!-- {{ getCurrentTomb() }} -->
-    <ul>
+    <b>Informacje o zmarłych:</b><br>
+      <ul>
       <li *ngFor="let person of people">
         <b>{{ person.name }} {{ person.surname }}</b><br>
         Data ur.: {{ person.birthDate }}<br>

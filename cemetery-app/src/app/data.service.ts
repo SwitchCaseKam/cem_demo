@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Person } from './person.model';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class DataService {
 
   apiUrl: string = 'http://localhost:3000';
-  currentTomb: any;
+  currentTomb= new Subject<any>();
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -20,9 +20,8 @@ export class DataService {
 
   public getPersonById(id: number){
     this.httpClient.get(`${this.apiUrl}/people/${id}`).subscribe((res)=>{
-      console.log(res);
       return res;
-  });
+    });
   };
 
   public getPeople(url?: string){
@@ -31,28 +30,19 @@ export class DataService {
   
   public getTombById(id: number){
     this.httpClient.get(`${this.apiUrl}/people?tombId=${id}`).subscribe((res)=>{
-      this.currentTomb = JSON.stringify(res);
-      console.log(this.currentTomb)
+      this.currentTomb.next(res);
+    });
+  };
 
-  });
+  public getTombs(url?: string){
 
   };
 
-  public getTombs(url?: string){};
-
-  public getCurrentTomb(){
-    return this.currentTomb;
+  public getCurrentTomb(): Observable<any>{
+    return this.currentTomb.asObservable();
   }
 
   getInfoAboutTomb(tombId: number) {
-    console.log("tomb clicked");
-    console.log(this.getTombById(tombId));
+    this.getTombById(tombId);
   }
-
-  // getDetailsInfoText() {
-
-  //   console.log(this.temp);
-  //   return this.temp;
- 
-  // }
 }

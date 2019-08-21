@@ -4,7 +4,7 @@ import { DataService } from '../data.service';
 @Component({
   selector: 'app-mapa',
   templateUrl: './mapa.component.html',
-  styleUrls: ['./mapa.component.css']
+  styleUrls: ['./mapa.component.css'],
 })
 export class MapaComponent implements OnInit {
 
@@ -16,8 +16,7 @@ export class MapaComponent implements OnInit {
   }
 
   getTombInfo(event) {
-    let id = event.target.id
-    this.dataService.getInfoAboutTomb(id);
+    this.dataService.getInfoAboutTomb(event.target.id);
   }
 
   
