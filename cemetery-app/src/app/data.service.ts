@@ -19,15 +19,10 @@ export class DataService {
   }
   constructor(private httpClient: HttpClient) { }
 
-  public getPersonById(id: number){
-    this.httpClient.get(`${this.apiUrl}/people/${id}`).subscribe((res)=>{
-      return res;
-    });
-  };
-
   public getPeople(url?: string){
-    this.httpClient.get(`${this.apiUrl}/people/`).subscribe((res)=>{
-      return res;
+    this.httpClient.get(`${this.apiUrl}/people`).subscribe((res)=>{
+      this.allPeople.next(res);
+      console.log(this.allPeople);
     });
   };
   
@@ -35,10 +30,6 @@ export class DataService {
     this.httpClient.get(`${this.apiUrl}/people?tombId=${id}`).subscribe((res)=>{
       this.currentTomb.next(res);
     });
-  };
-
-  public getTombs(url?: string) {
-
   };
 
   public getCurrentTomb(): Observable<any> {

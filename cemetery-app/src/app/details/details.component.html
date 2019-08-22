@@ -1,20 +1,22 @@
 <div class="grid-container">
-
-  <div *ngIf='people'>
+    <div *ngIf='people === []'>
+        Brak danych o danym grobie
+        </div>
+  <div *ngIf='people !== []'>
     <p style="text-align: center"><b>Informacje o zmarłych</b></p>
     <table class="table">
         <thead class="thead-dark">
           <tr>
-            <th style="background: #343A40" scope="col">Imię i nazwisko</th>
-            <th style="background: #343A40" scope="col">Data urodzenia</th>
-            <th style="background: #343A40" scope="col">Data śmierci</th>
+            <th style="background: #343A40; font-family: Calibri" scope="col">Imię i nazwisko</th>
+            <th style="background: #343A40; font-family: Calibri" scope="col">Data urodzenia</th>
+            <th style="background: #343A40; font-family: Calibri" scope="col">Data śmierci</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let person of people">
-            <th scope="row"><b>{{ person.name }} {{ person.surname }}</b></th>  
-            <td>{{ person.birthDate }}</td>
-            <td>{{ person.deathDate }}</td> 
+            <th style="font-family: Calibri" scope="row"><b>{{ person.name }} {{ person.surname }}</b></th>  
+            <td style="font-family: Calibri" >{{ person.birthDate }}</td>
+            <td style="font-family: Calibri" >{{ person.deathDate }}</td> 
           </tr> 
         </tbody>
     </table>

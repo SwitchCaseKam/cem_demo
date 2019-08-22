@@ -10,6 +10,7 @@ export class PieChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
