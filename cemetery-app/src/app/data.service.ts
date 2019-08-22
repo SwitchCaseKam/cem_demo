@@ -9,7 +9,8 @@ import { Observable, Subject } from 'rxjs';
 export class DataService {
 
   apiUrl: string = 'http://localhost:3000';
-  currentTomb= new Subject<any>();
+  currentTomb = new Subject<any>();
+  allPeople = new Subject<any>();
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -25,7 +26,9 @@ export class DataService {
   };
 
   public getPeople(url?: string){
-    return this.httpClient.get<Person[]>(`${this.apiUrl}/customers`);
+    this.httpClient.get(`${this.apiUrl}/people/`).subscribe((res)=>{
+      return res;
+    });
   };
   
   public getTombById(id: number){
@@ -34,12 +37,16 @@ export class DataService {
     });
   };
 
-  public getTombs(url?: string){
+  public getTombs(url?: string) {
 
   };
 
-  public getCurrentTomb(): Observable<any>{
+  public getCurrentTomb(): Observable<any> {
     return this.currentTomb.asObservable();
+  }
+
+  public getAllPeople(): Observable<any> {
+    return this.allPeople.asObservable();
   }
 
   getInfoAboutTomb(tombId: number) {

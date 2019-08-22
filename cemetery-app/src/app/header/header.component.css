@@ -7,4 +7,10 @@
 .navbar {
     position: sticky;
     top:0;
+    z-index: 99; 
+}
+
+.navbar-toggler{
+    background-color: #f5f5f5;
+    top:0;
 }

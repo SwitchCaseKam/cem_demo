@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl} from '@angular/forms';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-searcher',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearcherComponent implements OnInit {
 
-  constructor() { }
+  myControl = new FormControl();
+  allPeople: any;
+  
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.getAllPeople().subscribe(data => {
+      this.allPeople = data;
+    });
+    console.log(this.allPeople)
   }
 
 }
