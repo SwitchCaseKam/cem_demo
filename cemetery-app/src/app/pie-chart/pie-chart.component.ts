@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PieChartComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
     
   }
+
+    
 
 }

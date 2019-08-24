@@ -1,9 +1,7 @@
 <div class="grid-container">
-    <div *ngIf='people === []'>
-        Brak danych o danym grobie
-        </div>
-  <div *ngIf='people !== []'>
-    <p style="text-align: center"><b>Informacje o zmarłych</b></p>
+  <!-- <h1 id='detailsInfo'></h1> -->
+  <div *ngIf='people'>
+    <p style="text-align: center"><b>Informacje o zmarłych w danym grobie</b></p>
     <table class="table">
         <thead class="thead-dark">
           <tr>

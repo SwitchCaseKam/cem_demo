@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { ChartsModule } from 'ng2-charts';
 
 @Component({
   selector: 'app-stats',
@@ -10,6 +11,7 @@ export class StatsComponent implements OnInit {
 
   allPeople: any;
   allPeopleCount: number;
+  
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
