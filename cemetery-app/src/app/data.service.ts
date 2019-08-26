@@ -11,6 +11,8 @@ export class DataService {
   apiUrl: string = 'http://localhost:3000';
   currentTomb = new Subject<any>();
   allPeople = new Subject<any>();
+  allMen  = new Subject<any>();
+  allWomen = new Subject<any>();
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -34,6 +36,26 @@ export class DataService {
 
   public getCurrentTomb(): Observable<any> {
     return this.currentTomb.asObservable();
+  }
+
+  public getMen(url?: string){
+    this.httpClient.get(`${this.apiUrl}/people?sex=M`).subscribe((res)=>{
+      this.allMen.next(res);
+    });
+  };
+
+  public getWomen(url?: string){
+    this.httpClient.get(`${this.apiUrl}/people?sex=K`).subscribe((res)=>{
+      this.allWomen.next(res);
+    });
+  };
+
+  public getAllMen(): Observable<any> {
+    return this.allMen.asObservable();
+  }
+
+  public getAllWomen(): Observable<any> {
+    return this.allWomen.asObservable();
   }
 
   public getAllPeople(): Observable<any> {

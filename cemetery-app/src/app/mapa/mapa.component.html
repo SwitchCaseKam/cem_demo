@@ -3,7 +3,7 @@
     
     <!-- strefa 1 -->
 
-    <rect class="tomb" id=101 x="85%" y="3.50%" width="2.42%" height="6.28%" data-label="Test-Label" (click)='getTombInfo($event)'></rect>
+    <rect class="tomb" id=101 x="85%" y="3.50%" width="2.42%" height="6.28%" data-label="Test-Label" (click)='getTombInfo($event)' data-toggle="modal" data-target="#exampleModal"></rect>
     <rect class="tomb" id=102 x="85%" y="10.03%" width="2.42%" height="6.28%" title="Abc 5" (click)='getTombInfo($event)'></rect>
     <rect class="tomb" id=103 x="85%" y="16.56%" width="2.42%" height="4.28%" title="Abc 5" (click)='getTombInfo($event)'></rect>
     <rect class="tomb" id=104 x="85%" y="21.09%" width="2.42%" height="6.28%" title="Abc 5" (click)='getTombInfo($event)'></rect>
@@ -313,3 +313,8 @@
 
   </svg>
 </div>
+
+
+<template class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <app-details></app-details>
+</template>

@@ -9,6 +9,7 @@ import { MenuComponent } from './menu/menu.component';
 import { DetailsComponent } from './details/details.component';
 import { TombComponent } from './tomb/tomb.component';
 
+import { ChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -39,7 +40,8 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

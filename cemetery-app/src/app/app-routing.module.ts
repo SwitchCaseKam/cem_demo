@@ -7,7 +7,7 @@ import { CemeteryLayoutComponent } from './cemetery-layout/cemetery-layout.compo
 const routes: Routes = [
   { path: 'map', component: CemeteryLayoutComponent },
   { path: 'stats', component: StatsComponent }, 
-  { path: 'home', component: HomeComponent}
+  { path: '**', component: HomeComponent}
 ]
 
 @NgModule({
