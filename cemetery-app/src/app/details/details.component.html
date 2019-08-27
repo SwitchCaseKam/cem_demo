@@ -32,7 +32,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <div *ngIf='people'>
+        <div *ngIf='peopleCount > 0'>
 
           <table class="table">
               <thead class="thead-dark">
@@ -51,6 +51,15 @@
               </tbody>
           </table>
         </div>
+        <div *ngIf='peopleCount === 0'>
+          Brak danych do wyświetlenia o tym grobie.<br>
+          Możliwe, że nikt w nim nie spoczywa.
+        </div>
+
+        <div *ngIf='peopleCount === -1'>
+            Brak odpowiedzi z serwera.<br>
+            Zgłoś problem administratorowi: <b>kamil.leczycki.ns@gmail.com</b>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>

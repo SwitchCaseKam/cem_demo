@@ -1,19 +1,20 @@
 <div class="container">
   Liczba zmarłych pochowanych na cmentarzu: <b>{{ allPeopleCount }}  </b><br>
   Liczba mężczyzn pochowanych na cmentarzu: <b>{{ allMenCount }}  </b><br>
-  Liczba kobiet pochowanych na cmentarzu: <b>{{ allWomenCount }}  </b>
+  Liczba kobiet pochowanych na cmentarzu: <b>{{ allWomenCount }}  </b><br><br>
+
   <div class="row no-gutters">  
         <div class="col-lg-6">
-          <div class="chart-element">
+         
             <!-- <img class="img-fluid" src="https://i.imgur.com/StXe6CK.png"> -->
             <app-pie-chart></app-pie-chart>
-          </div>
+        
         </div>
-
+        <br>
         <div class="col-lg-6">
-            <div class="chart-element">
-                <img class="img-fluid" src="https://wcs.smartdraw.com/bar-graph/img/simplebarchart.jpg?bn=1510011145">
-              </div>
+            
+                <app-bar-chart></app-bar-chart>
+              
           </div>
     </div>
 

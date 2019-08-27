@@ -32,11 +32,11 @@ export class PieChartComponent implements OnInit {
   allMen: any;
   allWomen: any;
 
-  allMenCount: number; 
-  allWomenCount: number;
+  allMenCount: number = 50; 
+  allWomenCount: number = 60;
 
   public pieChartLabels = ['Mężczyzni', 'Kobiety'];
-  public pieChartData = [44, 36];
+  public pieChartData = [this.allMenCount, this.allWomenCount];
   public pieChartType = 'pie';
   
   constructor(private dataService: DataService) { 
