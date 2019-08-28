@@ -29,31 +29,48 @@ import { DataService } from '../data.service';
  
 export class PieChartComponent implements OnInit {
   
+  public pieChartLabels = ['Mężczyzni', 'Kobiety'];
+  public pieChartData = [1, 1];
+  public pieChartType = 'pie';
+
+  
+  allPeople: any;
   allMen: any;
   allWomen: any;
 
-  allMenCount: number = 50; 
-  allWomenCount: number = 60;
-
-  public pieChartLabels = ['Mężczyzni', 'Kobiety'];
-  public pieChartData = [this.allMenCount, this.allWomenCount];
-  public pieChartType = 'pie';
+  allPeopleCount: number;
+  allMenCount: number; 
+  allWomenCount: number;
   
-  constructor(private dataService: DataService) { 
-
-  }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.getPeople();
+    this.dataService.getAllPeople().subscribe(data => {
+      this.allPeople = data;
+      this.allPeopleCount = data.length;
+      this.pieChartData = [];
+    });
+    
     this.dataService.getMen();
     this.dataService.getAllMen().subscribe(data => {
       this.allMen = data;
       this.allMenCount = data.length;
+      this.pieChartData.push(data.length);
     });
 
     this.dataService.getWomen();
     this.dataService.getAllWomen().subscribe(data => {
       this.allWomen = data;
       this.allWomenCount = data.length;
+      this.pieChartData.push(data.length);
     });
+
+    // this.pieChartData = [this.dataService.getAllMen(), this.dataService.getAllWomen()]
+    // console.log(this.pieChartData)
+  }
+
+  setValues() {
+    this.pieChartData = [this.allMenCount, this.allWomenCount]
   }
 }

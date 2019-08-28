@@ -1,31 +1,17 @@
-<!-- Search form -->
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<form class="example-form" style="display: inline-block;"> 
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="Wpisz imię i nazwisko, którego grobu szukasz" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)='getChosenPerson($event.option.value)'>
+      <mat-option *ngFor="let person of filteredOptions | async" [value]="person">
+        {{person}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-<div class="container">
-    <br/>
-	<div class="row justify-content-center">
-                        <div class="col-12 col-md-10 col-lg-8">
-                            <form class="card card-sm">
-                                <div class="card-body row no-gutters align-items-center">
-                                    <div class="col-auto">
-                                        <i class="fas fa-search h4 text-body"></i>
-                                    </div>
-                                    <!--end of col-->
-                                    <div class="col">
-                                        <input class="form-control form-control-sm form-control-borderless" type="search" placeholder="Wpisz imię i nazwisko zmarłego">
-                                    </div>
-                                    <!--end of col-->
-                                    <div class="col-auto">
-                                        <button class="btn btn-md btn-success" type="submit">Szukaj</button>
-                                    </div>
-                                    <!--end of col-->
-                                </div>
-                            </form>
-                        </div>
-                        <!--end of col-->
-                    </div>
-</div>
+<button type="button" class="btn btn-dark" style="display: inline-block;" (click)="getTombInfo()" data-toggle="modal" data-target="#exampleModal">Szukaj</button>
+
+<template class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <app-details></app-details>
+</template>
+<br>
