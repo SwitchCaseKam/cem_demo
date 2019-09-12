@@ -3,10 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { StatsComponent } from './stats/stats.component';
 import { HomeComponent } from './home/home.component';
 import { CemeteryLayoutComponent } from './cemetery-layout/cemetery-layout.component'
+import { ContactComponent } from './contact/contact.component';
+import { PeopleTableComponent } from './people-table/people-table.component';
 
 const routes: Routes = [
   { path: 'map', component: CemeteryLayoutComponent },
   { path: 'stats', component: StatsComponent }, 
+  { path: 'contact', component: ContactComponent }, 
+  { path: 'list', component: PeopleTableComponent }, 
   { path: '**', component: HomeComponent}
 ]
 
@@ -15,4 +19,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [CemeteryLayoutComponent, StatsComponent, HomeComponent]
+export const routingComponents = [CemeteryLayoutComponent, StatsComponent, HomeComponent, ContactComponent]

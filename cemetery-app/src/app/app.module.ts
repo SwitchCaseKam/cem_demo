@@ -22,6 +22,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatAutocompleteModule} from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ContactComponent } from './contact/contact.component';
+import { PeopleTableComponent } from './people-table/people-table.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MapaComponent,
     BarChartComponent,
     PieChartComponent,
+    ContactComponent,
+    PeopleTableComponent,
 
   ],
   imports: [

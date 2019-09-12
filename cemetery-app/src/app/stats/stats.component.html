@@ -1,21 +1,18 @@
 <div class="container">
-  Liczba zmarłych pochowanych na cmentarzu: <b>{{ allPeopleCount }}  </b><br>
-  Liczba mężczyzn pochowanych na cmentarzu: <b>{{ allMenCount }}  </b><br>
-  Liczba kobiet pochowanych na cmentarzu: <b>{{ allWomenCount }}  </b><br><br>
-
-  <div class="row no-gutters">  
-        <div class="col-lg-6">
-         
-            <!-- <img class="img-fluid" src="https://i.imgur.com/StXe6CK.png"> -->
-            <app-pie-chart></app-pie-chart>
-        
-        </div>
-        <br>
-        <div class="col-lg-6">
-            
-                <app-bar-chart></app-bar-chart>
-              
-          </div>
+    <br>
+    <h5 style="text-align: center;">
+        <b>Liczba zmarłych pochowanych w danym roku</b>
+    </h5>
+    <div class="col-lg-12">
+        <app-bar-chart></app-bar-chart>
     </div>
-
+    <br>
+    <br>
+    <h5 style="text-align: center;">
+            <b>Liczba kobiet i mężczyzn spoczywających na cmentarzu</b>
+         </h5>
+        <div class="col-lg-12">
+            <app-pie-chart></app-pie-chart>
+        </div>
 </div>
+<br>
