@@ -60,12 +60,16 @@ export class SearcherComponent implements OnInit {
   public getTombInfo(event) {
     console.log('event');
     console.log(event);
-    this.dataService.getInfoAboutTomb(this.chosenTombId);
     let element = document.getElementById(this.chosenTombId);
-    console.log('Tomb parameters');
     this.markTombService.updateValuesByHtmlElement(element);
     this.markTombService.getXValue().subscribe(data => this.x = data);
     this.markTombService.getYValue().subscribe(data => this.y = data);
+    
+    this.dataService.getInfoAboutTomb(this.chosenTombId);
+    
+    console.log('Tomb parameters');
+    
+    
     
 
     // console.log(element.x.animVal.value);

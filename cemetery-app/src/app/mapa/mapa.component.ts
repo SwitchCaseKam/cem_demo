@@ -18,15 +18,22 @@ export class MapaComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.markTombService.getXValue().subscribe(data => this.x = data);
+    this.markTombService.getYValue().subscribe(data => this.y = data);
   }
 
   getTombInfo(event) {
     console.log('getTombInfo - event');
     console.log(event);
+    
+    // this.markTombService.getXValue().subscribe(data => this.x = data);
+    // this.markTombService.getYValue().subscribe(data => this.y = data);
+    this.dataService.getInfoAboutTomb(event.target.id);
     this.markTombService.updateValues(event.target.x.animVal.value + event.target.width.animVal.value/2 + '%',
     event.target.y.animVal.valueInSpecifiedUnits + 1.5*event.target.height.animVal.value + '%')
-    this.markTombService.getXValue().subscribe(data => this.x = data);
-    this.markTombService.getYValue().subscribe(data => this.y = data);
-    this.dataService.getInfoAboutTomb(event.target.id);
+  
+
   }
+  
+  
 }
