@@ -28,7 +28,7 @@ export class DataService {
     });
   };
   
-  public getTombById(id: number){
+  public getTombById(id: string){
     this.httpClient.get(`${this.apiUrl}/people?tombId=${id}`).subscribe((res)=>{
       this.currentTomb.next(res);
     });
@@ -62,7 +62,7 @@ export class DataService {
     return this.allPeople.asObservable();
   }
 
-  getInfoAboutTomb(tombId: number) {
+  getInfoAboutTomb(tombId: string) {
     this.getTombById(tombId);
   }
 }

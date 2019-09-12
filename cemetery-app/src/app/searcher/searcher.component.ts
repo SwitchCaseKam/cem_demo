@@ -3,6 +3,7 @@ import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
 import { DataService } from '../data.service';
+import { MarkTombService } from '../mark-tomb.service';
 
 @Component({
   selector: 'app-searcher',
@@ -16,9 +17,11 @@ export class SearcherComponent implements OnInit {
   filteredOptions: Observable<string[]>;
 
   allPeople: any;
-  chosenTombId: number;
+  chosenTombId: string;
+  x: any = '-10%';
+  y: any = '-10%';
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private markTombService: MarkTombService) { }
 
   ngOnInit() {
     this.dataService.getPeople();
@@ -54,8 +57,25 @@ export class SearcherComponent implements OnInit {
     this.chosenTombId = value.split(' ')[0];
   }
 
-  public getTombInfo() {
+  public getTombInfo(event) {
+    console.log('event');
+    console.log(event);
     this.dataService.getInfoAboutTomb(this.chosenTombId);
+    let element = document.getElementById(this.chosenTombId);
+    console.log('Tomb parameters');
+    this.markTombService.updateValuesByHtmlElement(element);
+    this.markTombService.getXValue().subscribe(data => this.x = data);
+    this.markTombService.getYValue().subscribe(data => this.y = data);
+    
+
+    // console.log(element.x.animVal.value);
+    // console.log(element.y.animVal.valueInSpecifiedUnits);
+    // console.log(element.height.animVal.value);
+    // console.log(element.width.animVal.value);
+
+
+
+
   }
 
 
