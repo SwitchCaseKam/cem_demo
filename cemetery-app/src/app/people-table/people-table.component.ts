@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-people-table',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeopleTableComponent implements OnInit {
 
-  constructor() { }
+  people: any;
+  peopleCount: number = -1;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.getPeople();
+    this.dataService.getAllPeople().subscribe(data => {
+      this.people = data;
+      this.peopleCount = data.length; 
+    });    
   }
 
 }

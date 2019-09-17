@@ -1,3 +1,22 @@
-<p>
-  people-table works!
-</p>
+<div class="container">
+    <br>
+    <div *ngIf='peopleCount > 0'>
+
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th style="background: #343A40; font-family: Calibri" scope="col">Imię i nazwisko</th>
+                <th style="background: #343A40; font-family: Calibri" scope="col">Data urodzenia</th>
+                <th style="background: #343A40; font-family: Calibri" scope="col">Data śmierci</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let person of people">
+                <th style="font-family: Calibri" scope="row"><b>{{ person.name }} {{ person.surname }}</b></th>  
+                <td style="font-family: Calibri" >{{ person.birthDate }}</td>
+                <td style="font-family: Calibri" >{{ person.deathDate }}</td> 
+              </tr> 
+            </tbody>
+        </table>
+      </div>
+</div>
