@@ -8,7 +8,7 @@ import { Observable, Subject } from 'rxjs';
 })
 export class DataService {
 
-  apiUrl: string = 'http://localhost:3000';
+  apiUrl: string = 'https://test-node-tomb-server.herokuapp.com';
   currentTomb = new Subject<any>();
   allPeople = new Subject<any>();
   allMen  = new Subject<any>();
