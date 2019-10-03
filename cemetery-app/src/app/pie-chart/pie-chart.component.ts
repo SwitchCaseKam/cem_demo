@@ -66,7 +66,7 @@ export class PieChartComponent implements OnInit {
       this.pieChartData.push(data.length);
     });
 
-    this.pieChartData = [this.allMen, this.allWomen]
+    this.pieChartData = [this.allWomen, this.allMen]
     // console.log(this.pieChartData)
   }
 
