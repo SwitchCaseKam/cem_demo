@@ -12,3 +12,14 @@
     color: rgb(32, 42, 53);
     text-align: justify;
 }
+.info-element
+{
+    padding: 30px;
+    font-family: "Calibri";
+    color: rgb(32, 42, 53);
+    background-color: rgb(255, 255, 255);
+    /* text-align: justify; */
+    border-left: 2px solid rgb(189, 172, 172);
+    text-align: center;
+    
+}
