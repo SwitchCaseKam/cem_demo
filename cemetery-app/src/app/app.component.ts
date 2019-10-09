@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   constructor(private dataService: DataService, private markTombService: MarkTombService){}
 
   ngOnInit(): void {
+    
 
   }
 }

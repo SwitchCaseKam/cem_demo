@@ -24,6 +24,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ContactComponent } from './contact/contact.component';
 import { PeopleTableComponent } from './people-table/people-table.component';
+import { CookieLawModule } from 'angular2-cookie-law';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { PeopleTableComponent } from './people-table/people-table.component';
     MatInputModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CookieLawModule
   ],
   providers: [],
   bootstrap: [AppComponent]
