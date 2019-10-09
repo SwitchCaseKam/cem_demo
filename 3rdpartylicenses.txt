@@ -72,6 +72,9 @@ MIT
 @angular/router
 MIT
 
+angular2-cookie-law
+MIT
+
 chart.js
 MIT
 The MIT License (MIT)
