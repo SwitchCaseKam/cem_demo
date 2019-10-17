@@ -25,6 +25,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ContactComponent } from './contact/contact.component';
 import { PeopleTableComponent } from './people-table/people-table.component';
 import { CookieLawModule } from 'angular2-cookie-law';
+import { RulesComponent } from './rules/rules.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CookieLawModule } from 'angular2-cookie-law';
     PieChartComponent,
     ContactComponent,
     PeopleTableComponent,
+    RulesComponent,
 
   ],
   imports: [
